@@ -7,18 +7,18 @@
     <script src="https://kendo.cdn.telerik.com/2018.3.1017/js/jquery.min.js"></script>  
 </head>  
 <body>  
-    <h3> Get Site Metadata using Azure function</h3>  
-    <label>Enter Site Name: </label> <input type="text" id="txtName" />  
-    <button id="btnName">Submit</button>  
+    <h3> Get Watch Details</h3>  
+    <label>Enter Model Name: </label> <input type="text" id="txtName" placeholder="Enter Rolex" />  
+    <button id="btnName">Submit</button> <br> 
     <label id="message" style="color:green"></label>  
     <script>  
         $(document).ready(function () {  
             $("#btnName").on("click", function () {  
   $.ajax({  
                     type: "POST",  
-                    url: "https://metasrap-419.azurewebsites.net/api/MetaScrapper?url=",  
+                    url: "https://watchportalfunction20210409092959.azurewebsites.net/api/WatchInfo?model=",  
                     data: JSON.stringify({  
-                        "name": $("#txtName").val(),  
+                        "model": $("#txtName").val(),  
                     }),                     
                     success: function (response) {                     
                         $("#message").text(response);  
